@@ -142,9 +142,55 @@ namespace BankAccount.Tests
         public void Test_Saving_Min_Balance_Prop()
         {
             Savings savings = new Savings(150);
+            savings.MinBal = 150;
             double response = savings.MinBal;
             Assert.That(response, Is.EqualTo(150));
         }
+
+        [Test]
+        public void Test_Account_Num_Prop()
+        {
+            Account account = new Account();
+            account.AcctNum = 123456;
+            int response = account.AcctNum;
+            Assert.That(response, Is.EqualTo(123456));
+        }
+
+        [Test]
+        public void Test_Balance_Prop()
+        {
+            Account account = new Account();
+            account.AcctBal = 5.00;
+            double response = account.AcctBal;
+            Assert.That(response, Is.EqualTo(5.00));
+        }
+
+        [Test]
+        public void Test_Get_Balance_Method()
+        {
+            Account account = new Account();
+            account.AcctBal = 100;
+            double response = account.GetBalance();
+            Assert.That(response, Is.EqualTo(100));
+
+        }
+
+        [Test]
+        public void Test_Savings_Deposit_Method()
+        {
+            Savings savings = new Savings(5);
+            double response = savings.GetDeposit(110);
+            Assert.That(response, Is.EqualTo(115));
+        }
+
+        [Test]
+        public void Test_Savings_Withdraw_Method()
+        {
+            Savings savings = new Savings(115);
+            double response = savings.GetWithdraw(110);
+            Assert.That(response, Is.EqualTo(5));
+        }
+
 
 
 

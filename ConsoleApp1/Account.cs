@@ -11,6 +11,9 @@ namespace BankAccount
         public double WithDraw { get; set; }
         public double Deposit { get; set; }
         public string AcctType { get; set; }
+        public int AcctNum { get; set; }
+        public double AcctBal { get; set; }
+
 
         public Account()
         {
@@ -27,6 +30,23 @@ namespace BankAccount
             return value;
         }
 
-        
+        public double GetDeposit(double value)
+        {
+            AcctBal = AcctBal + value;
+            return AcctBal;
+        }
+
+        public double GetWithdraw(double value)
+        {
+            AcctBal = AcctBal - value;
+            return AcctBal;
+        }
+
+        public double GetBalance()
+        {
+            return AcctBal;
+        }
+
+
     }
 }
