@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BankAccount;
 
-namespace Account.Tests
+namespace BankAccount.Tests
 {
     [TestFixture]
     class AccountTests
@@ -69,6 +69,81 @@ namespace Account.Tests
             Client client = new Client(0);
             double response = client.AcctBal;
             Assert.That(response, Is.EqualTo(0.0));
+        }
+
+        [Test]
+        public void Test_WithDraw_Prop()
+        {
+            Account account = new Account();
+            account.WithDraw = 0.0;
+            double response = account.WithDraw;
+            Assert.That(response, Is.EqualTo(0.0));
+        }
+
+        [Test]
+        public void Test_Deposit_Prop()
+        {
+            Account account = new Account();
+            account.Deposit = 0.0;
+            double response = account.Deposit;
+            Assert.That(response, Is.EqualTo(0.0));
+        }
+
+        [Test]
+        public void Test_Withdraw_Method()
+        {
+            Account account = new Account();
+            double response = account.Withdraw(0.0);
+            Assert.That(response, Is.EqualTo(0.0));
+        }
+
+        [Test]
+        public void Test_Deposit_Method()
+        {
+            Account account = new Account();
+            double response = account.DePosit(0.0);
+            Assert.That(response, Is.EqualTo(0.0));
+        }
+
+        [Test]
+        public void Test_AccountType_Prop()
+        {
+            Account account = new Account();
+            account.AcctType = " ";
+            string response = account.AcctType;
+            Assert.That(response, Is.EqualTo(" "));
+        }
+
+        [Test]
+        public void Test_Checking_Account_CTR()
+        {
+            CheckingAccount checkingAccount = new CheckingAccount(110);
+            double response = checkingAccount.AcctBal;
+            Assert.That(response, Is.EqualTo(110));
+        }
+
+        [Test]
+        public void Test_Checking_Deposit_Method()
+        {
+            CheckingAccount checkingAccount = new CheckingAccount(5);
+            double response = checkingAccount.GetDeposit(110);
+            Assert.That(response, Is.EqualTo(115));
+        }
+
+        [Test]
+        public void Test_Checking_Withdraw_Method()
+        {
+            CheckingAccount checkingAccount = new CheckingAccount(200);
+            double response = checkingAccount.GetWithdraw(100);
+            Assert.That(response, Is.EqualTo(100));
+        }
+
+        [Test]
+        public void Test_Saving_Min_Balance_Prop()
+        {
+            Savings savings = new Savings(150);
+            double response = savings.MinBal;
+            Assert.That(response, Is.EqualTo(150));
         }
 
 

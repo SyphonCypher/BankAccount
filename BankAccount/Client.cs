@@ -4,8 +4,6 @@ namespace BankAccount
 {
     public class Client
     {
-        private int v;
-
         public string LName { get; set; }
         public string FName { get; set; }
         public string AccountNum { get; set; }
