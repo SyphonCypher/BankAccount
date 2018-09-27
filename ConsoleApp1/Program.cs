@@ -15,6 +15,12 @@ namespace BankAccount
             Savings savings = new Savings();
 
             checking.AcctNum = 02468;
+            checking.AcctType = "checking";
+            checking.AcctBal = 1000.00;
+
+            savings.AcctNum = 02468;
+            savings.AcctType = "checking";
+            savings.AcctBal = 1000.00;
         }
     }
 }

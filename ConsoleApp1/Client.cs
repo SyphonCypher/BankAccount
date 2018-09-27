@@ -54,7 +54,6 @@ namespace BankAccount
                 {
                     CheckingAccount account = new CheckingAccount();
                     Console.WriteLine("Your checking account balance is: $" + account.GetBalance());
-
                 }
             }
             return response;
